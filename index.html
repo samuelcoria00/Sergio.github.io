@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#DCE4F1">
+    <title>Servicios</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            future: { hoverOnlyWhenSupported: true },
+            theme: {
+                extend: {
+                    colors: {
+                        mist: '#DCE4F1',     // fondo principal (azul grisáceo suave)
+                        card: '#F3F6FB',     // tarjetas
+                        line: '#BCC8DC',     // bordes
+                        ink: '#1B2340',      // texto principal
+                        body: '#38446A',     // texto secundario
+                        muted: '#566180',    // texto terciario
+                        teal: '#0B7F86',     // acento 1
+                        violet: '#6246D8',   // acento 2
+                        rose: '#C2417F'      // acento 3
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Archivo CSS Separado -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-mist text-ink antialiased selection:bg-teal selection:text-ink min-h-[100dvh] flex flex-col justify-between">
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-mist/80 border-b border-line transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" aria-label="Volver al inicio" class="mobile-link flex items-center gap-3 min-w-0 cursor-pointer">
+                    <div class="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-teal to-violet p-0.5">
+                        <div class="w-full h-full bg-mist rounded-[10px] flex items-center justify-center">
+                            <i data-lucide="user-cog" class="w-5 h-5 text-teal"></i>
+                        </div>
+                    </div>
+                    <span class="text-base sm:text-xl font-extrabold tracking-tight text-ink truncate">Servicios - Coria Sergio</span>
+                </a>
+                <!-- Navegación Escritorio -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#servicios" class="text-sm font-medium text-body hover:text-teal transition-colors duration-200">Servicios</a>
+                    <a href="#sobre-mi" class="text-sm font-medium text-body hover:text-teal transition-colors duration-200">Sobre Mí</a>
+                    <a href="#faq" class="text-sm font-medium text-body hover:text-teal transition-colors duration-200">FAQ</a>
+                </nav>
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-3 rounded-lg text-muted hover:text-ink hover:bg-white/50 focus:outline-none" aria-label="Abrir Menú">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-line bg-mist/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-body hover:text-ink hover:bg-white/60">Servicios</a>
+            <a href="#sobre-mi" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-body hover:text-ink hover:bg-white/60">Sobre Mí</a>
+            <a href="#faq" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-body hover:text-ink hover:bg-white/60">FAQ</a>
+            <a href="https://wa.me/541149801015" class="mobile-link block w-full text-center mt-4 px-5 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-teal to-violet">
+                Contactar Ahora
+            </a>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative pt-10 pb-16 md:pt-28 md:pb-36 overflow-hidden hero-glow-bg">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] md:w-[600px] h-[300px] bg-teal/20 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="absolute top-1/3 right-0 md:right-10 w-[240px] md:w-[400px] h-[240px] md:h-[400px] bg-violet/20 blur-[90px] md:blur-[150px] rounded-full pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <img src="assets/img/fotop1.png" alt="Imagen de Construcción" class="mx-auto mb-8 md:mb-14 w-full max-w-full h-64 object-cover object-center md:h-auto md:object-contain">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 md:mb-16">
+                    <a href="#servicios" class="w-full sm:w-auto px-6 sm:px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-teal to-violet hover:opacity-90 transition-all duration-300 shadow-lg shadow-teal/25 flex items-center justify-center gap-2">
+                        <span>Explorar Servicios</span>
+                        <i data-lucide="compass" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/541149801015" class="w-full sm:w-auto px-6 sm:px-8 py-4 rounded-xl font-semibold text-body bg-card/80 hover:bg-white/60 border border-line hover:border-teal/50 transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Consultar Presupuesto</span>
+                        <i data-lucide="notepad-text" class="w-5 h-5 text-teal"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-line">
+                    <div class="flex items-center justify-center gap-3 p-3 rounded-lg bg-card/70 border border-line">
+                        <i data-lucide="brick-wall" class="w-5 h-5 text-teal"></i>
+                        <span class="text-xs md:text-sm text-body font-medium">Albañilería</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 p-3 rounded-lg bg-card/70 border border-line">
+                        <i data-lucide="zap" class="w-5 h-5 text-violet"></i>
+                        <span class="text-xs md:text-sm text-body font-medium">Electricista</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 p-3 rounded-lg bg-card/70 border border-line">
+                        <i data-lucide="droplet" class="w-5 h-5 text-teal"></i>
+                        <span class="text-xs md:text-sm text-body font-medium">Plomería</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 p-3 rounded-lg bg-card/70 border border-line">
+                        <i data-lucide="hammer" class="w-5 h-5 text-violet"></i>
+                        <span class="text-xs md:text-sm text-body font-medium">Carpintería</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sobre mi -->
+        <section id="sobre-mi" class="py-14 md:py-20 bg-mist border-t border-line relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-teal mb-3">Sobre Mí</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-6">
+                            Coria Sergio Osvaldo
+                        </p>
+                        <p class="text-muted text-sm leading-relaxed mb-6">
+                        Tengo 56 años, Soy albañil autónomo y realizo trabajos de construcción, reformas y mantenimiento del hogar. También ofrezco servicios de electricidad domiciliaria y plomería para resolver distintas necesidades, desde pequeñas reparaciones e instalaciones hasta grandes reformas. Asesoro en la compra de materiales para optimizar tu presupuesto y realizo cotizaciones sin compromiso. Trabajo con responsabilidad, atención a los detalles y compromiso con cada proyecto, buscando que cada tarea quede bien realizada.
+                    </p>
+                    </div>
+                    <div class="flex justify-center md:justify-end">
+                        <img src="Assets/img/user.jpeg" alt="Sobre Mí" class="w-full max-w-sm md:max-w-full h-auto rounded-xl shadow-lg shadow-teal/25 border border-line">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SERVICIOS -->
+        <section id="servicios" class="py-14 md:py-20 bg-mist border-t border-line relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">
+                        Servicios
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                    
+                    <div class="group relative bg-card shadow-sm shadow-ink/5 border border-line rounded-2xl p-5 sm:p-8 hover:border-teal/50 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-ink transition-all duration-300">
+                            <i data-lucide="brick-wall" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 group-hover:text-teal transition-colors">
+                            Albañilería
+                        </h3>
+                        <p class="text-muted text-sm leading-relaxed mb-6">
+                            Soy albañil domiciliario y realizo todo tipo de trabajos para obras particulares y comerciales. Trabajo de forma independiente y, según el tamaño del proyecto, llevo mi propio equipo de ayudantes para asegurar que la obra avance en tiempo y forma. Me encargo que se realice del trabajo de principio a fin. Coordino con vos los materiales, los tiempos y las etapas del trabajo, y te mantengo al tanto durante todo el proceso.
+                        </p>
+                        <ul class="space-y-2.5 text-sm md:text-xs text-body">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Construcción de paredes y muros.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Revoques interiores y exteriores.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Colocación de ladrillos y bloques</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Contrapisos y carpetas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Colocación de pisos y revestimientos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Cimientos y bases.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Construcción de columnas y encadenados.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Techos y losas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Impermeabilización y aislaciones.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Reparación de humedad.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Construcción y remodelación de baños.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Construcción y remodelación de cocinas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Construcción desde cero.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Refacciones y remodelaciones generales.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Colocación de aberturas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Terminaciones de obra.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Mantenimiento general de hogares.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Pintura y terminaciones.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Reparación de grietas y paredes.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Ampliaciones y construcción de nuevos ambientes.</li>
+                        </ul>
+                    </div>
+                    <div class="group relative bg-card shadow-sm shadow-ink/5 border border-line rounded-2xl p-5 sm:p-8 hover:border-violet/50 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center mb-6 text-violet group-hover:bg-violet group-hover:text-ink transition-all duration-300">
+                            <i data-lucide="zap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 group-hover:text-violet transition-colors">
+                            Electricista
+                        </h3>
+                        <p class="text-muted text-sm leading-relaxed mb-6">
+                            Soy electricista domiciliario y realizo todo tipo de trabajos eléctricos en casas, comercios, y departamentos. Trabajo de forma particular, con atención personalizada y presupuestos sin compromiso. Me encargo tanto de las instalaciones y reparaciones más habituales como de las urgencias que no pueden esperar. Para los trabajos más grandes o que requieren más manos, cuento con gente de confianza que me asiste en la obra, así que puedo resolver desde una reparación puntual hasta una instalación completa, siempre con la misma responsabilidad y prolijidad. Trabajo dejando cada instalación protegida y bien terminada.
+                        </p>
+                        <ul class="space-y-2.5 text-sm md:text-xs text-body">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalaciones eléctricas domiciliarias</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de cajas, térmicas y disyuntores</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Colocación de tomacorrientes y llaves</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de puntos de luz y centros de techo</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Colocación de artefactos de iluminación</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de lámparas LED y tiras de luz</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Cableado de circuitos para cocina y lavadero</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de tomas para electrodomésticos de alta potencia</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparación de cortocircuitos y fallas eléctricas</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Detección y reparación de pérdidas de corriente</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de timbres</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Colocación de ventiladores de techo</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparación de enchufes y llaves dañadas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Ampliaciones de instalaciones eléctricas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación eléctrica en ampliaciones y nuevos ambientes.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparación de cajas de térmicas y recambio de cables antiguos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Instalación de tomacorrientes para exteriores y jardín.</li>
+                        </ul>
+                    </div>
+                    <div class="group relative bg-card shadow-sm shadow-ink/5 border border-line rounded-2xl p-5 sm:p-8 hover:border-teal/50 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-ink transition-all duration-300">
+                            <i data-lucide="droplet" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 group-hover:text-teal transition-colors">
+                            Plomería
+                        </h3>
+                        <p class="text-muted text-sm leading-relaxed mb-6">
+                            Soy plomero domiciliario. Realizo todo tipo de trabajos relacionados con instalaciones de agua, desagües, sanitarios y reparaciones en general. Trabajo solo o con personal de apoyo para trabajos de mayor magnitud, garantizando siempre un servicio completo y bien terminado.
+                            Ofrezco atención personalizada y directa, sin intermediarios. Presupuestos sin compromiso y ajustados a cada necesidad. Trabajos garantizados, prolijos y terminados en tiempo y forma.  Asesoramiento sobre la mejor solución para cada caso. Me adapto a las necesidades del cliente.
+                        </p>
+                        <ul class="space-y-2.5 text-sm md:text-xs text-body">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de cañerías de agua fría y caliente</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de desagües cloacales y pluviales.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Colocación de griferías y canillas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación y reparación de inodoros, bidés y lavabos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de bañeras, duchas y receptáculos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Conexión de lavarropas y lavavajillas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de termotanques y calefones.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Reparación de pérdidas de agua.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Destapaciones y desobstrucción de cañerías.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i>Cambio de cañerías antiguas (plomo, hierro, etc.).</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de tanques de agua y bombas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Colocación de bombas presurizadoras.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Reparación de filtraciones en baños y cocinas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de válvulas, llaves de paso y conexiones.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Mantenimiento preventivo de instalaciones sanitarias.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Reparación de artefactos sanitarios.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Instalación de sistemas de agua caliente central.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-teal"></i> Adecuación y renovación de instalaciones sanitarias en baños y cocinas.</li>
+                        </ul>
+                    </div>
+                    <div class="group relative bg-card shadow-sm shadow-ink/5 border border-line rounded-2xl p-5 sm:p-8 hover:border-violet/50 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center mb-6 text-violet group-hover:bg-violet group-hover:text-ink transition-all duration-300">
+                            <i data-lucide="hammer" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 group-hover:text-violet transition-colors">
+                            Carpintería
+                        </h3>
+                        <p class="text-muted text-sm leading-relaxed mb-6">
+                            Soy carpintero domiciliario con experiencia en trabajos de carpintería. Realizo desde muebles hasta restauraciones, y arreglos, con dedicación, prolijidad y precios accesibles.
+                            Trabajo de forma independiente y me adapto a lo que necesites:  mesas, estanterías, muebles simples, reparaciones generales y mucho más. Cada trabajo lo trato con la seriedad y el cuidado que merece, porque sé que tu confianza es lo más importante.
+                        </p>
+                        <ul class="space-y-2.5 text-sm md:text-xs text-body">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Construcción de muebles</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Armado e instalación de placares basicos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Colocación de aberturas y marcos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Construcción de escritorios, bibliotecas y estanterías.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparaciones de Placares, cómodas y mesas de luz.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparaciones de Camas de madera.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i> Reparaciones de Mesas, sillas y bancos.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i>Revestimientos de paredes y cielorrasos en madera.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i>Ajuste, reparación y recambio de bisagras, guías y correderas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i>Reparación de muebles y puertas.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i>Restauración y lustre de muebles.</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-violet"></i>Barnizado, laqueado y pintura de madera.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- FAQ ACCORDION -->
+<section id="faq" class="py-14 md:py-20 bg-mist">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-teal mb-3">Preguntas Frecuentes</h2>
+            <p class="text-2xl sm:text-3xl font-extrabold text-ink">Resolvé tus dudas antes de empezar</p>
+        </div>
+        <div class="space-y-3">
+            <!-- 1 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Qué tipo de trabajos realizas y en qué zonas trabajas?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Realizo trabajos integrales de Albañilería, Electricidad domiciliaria (instalaciones, arreglos, tableros) y Plomería (reparaciones, instalaciones de agua y desagües). Trabajo en florencio varela pero también en otras zonas de la ciudad.
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Cómo solicito un presupuesto y cómo es el proceso de trabajo?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Podés contactarme directamente por WhatsApp o teléfono indicándome qué trabajo necesitás realizar. Coordinamos una visita de inspección si es necesario, te envío un presupuesto claro y, una vez aprobado, fijamos fecha de inicio y plazo estimado.
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Los presupuestos incluyen los materiales o debo comprarlos yo?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Por lo general, el presupuesto es por la mano de obra y te entrego una lista detallada con los materiales exactos que tenés que comprar.
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Hacés trabajos pequeños o solo obras grandes?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Realizo desde arreglos puntuales (cambiar una llave de luz, reparar una pérdida de agua, hacer un parche de revoque) hasta remodelaciones completas. Ningún trabajo es demasiado chico.
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿El presupuesto tiene algún costo o compromiso?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    No, el presupuesto es totalmente gratuito y sin compromiso. Podés escribirme, comentarme qué necesitás arreglar y coordinamos para darte un valor estimado.
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Atendés urgencias de electricidad o plomería?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Sí, según la disponibilidad del momento puedo atender urgencias domiciliarias como cortocircuitos, pérdidas importantes de agua o caños rotos.
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Cómo me garantizás que el trabajo quede bien hecho?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Cuento con experiencia en los tres oficios y trabajo con prolijidad. Además, todos mis trabajos quedan probados en el momento y el funcionamiento esta garantizado.
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Trabajás los fines de semana o fuera de horario comercial?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Sí, entiendo las rutinas de cada hogar. Coordinamos los días y horarios que mejor te queden para realizar el trabajo sin interrumpir tu jornada.
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Qué medios de pago aceptás?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    Acepto efectivo, transferencias bancarias y pagos por Mercado Pago/billeteras virtuales.
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="border border-line rounded-xl bg-card shadow-sm shadow-ink/5 overflow-hidden">
+                <button class="faq-btn w-full px-4 sm:px-5 py-4 text-left flex items-center justify-between gap-4 text-ink text-sm sm:text-base font-medium hover:bg-white/50 transition-colors">
+                    <span>¿Tengo que poner las herramientas o las traés vos?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-teal transform transition-transform duration-200"></i>
+                </button>
+                <div class="faq-content hidden px-4 sm:px-5 py-4 text-sm text-muted leading-relaxed border-t border-line/60">
+                    No tenés que preocuparte por nada: voy con todo el equipamiento, herramientas específicas y maquinarias necesarias para realizar el trabajo de forma rápida y segura. Vos solo me facilitás el acceso al espacio.
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="bg-mist border-t border-line py-8 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-muted">
+            © 2026 Services. Todos los derechos reservados.
+        </div>
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        lucide.createIcons();
+
+        // Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIconOpen.classList.add('hidden');
+                menuIconClose.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            }
+        });
+
+        // Cerrar el menú al tocar un enlace
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // FAQ Accordion
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        faqButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const isHidden = content.classList.contains('hidden');
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                if (isHidden) content.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
